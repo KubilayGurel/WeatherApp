@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.kubilaygurel.weatherapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.kubilaygurel.weatherapp"
@@ -63,7 +63,6 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
-    implementation(libs.androidx.hilt.lifecycle.viewmodel)
     implementation(libs.androidx.hilt.navigation.compose)
 
 
@@ -73,6 +72,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.moshi)
     implementation(libs.logging.interceptor)
+    implementation (libs.kotlinx.coroutines.android)
 
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
