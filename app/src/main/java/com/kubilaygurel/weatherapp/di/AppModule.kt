@@ -21,7 +21,7 @@ object AppModule {
     @Singleton
     fun provideWeatherApi(): WeatherAPI {
         return Retrofit.Builder()
-            .baseUrl("https//api.open-meteo.com/")
+            .baseUrl("https://api.open-meteo.com/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
             .create()
@@ -32,5 +32,6 @@ object AppModule {
     fun provideFusedLocationProviderClient(app: Application): FusedLocationProviderClient {
         return LocationServices.getFusedLocationProviderClient(app)
     }
+
 
 }
