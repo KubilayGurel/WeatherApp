@@ -69,8 +69,10 @@ dependencies {
     implementation(libs.play.services.location)
 
 
+    implementation (libs.converter.gson)
+    implementation (libs.gson)
+
     implementation(libs.retrofit)
-    implementation(libs.converter.moshi)
     implementation(libs.logging.interceptor)
     implementation (libs.kotlinx.coroutines.android)
 
