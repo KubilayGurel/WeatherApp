@@ -10,11 +10,14 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import com.kubilaygurel.weatherapp.presentaion.ui.WeatherForecast
+import com.kubilaygurel.weatherapp.presentaion.ui.theme.CustomBackGround
 import com.kubilaygurel.weatherapp.presentaion.ui.theme.WeatherAppTheme
-import com.kubilaygurel.weatherapp.presentation.WeatherCard
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -42,10 +45,11 @@ class MainActivity : ComponentActivity() {
                 Column (
                     modifier = Modifier.
                     fillMaxSize()
-                        .background(Color.Blue)
+                        .background(CustomBackGround)
                 ){
-                    WeatherCard(state = viewModel.state,
-                        backgroundColor = Color.White)
+                    WeatherCard(state = viewModel.state)
+                    Spacer(modifier = Modifier.height(10.dp))
+                    WeatherForecast(state = viewModel.state)
                 }
 
                 }
