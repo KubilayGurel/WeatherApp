@@ -1,4 +1,4 @@
-package com.kubilaygurel.weatherapp.presentation
+package com.kubilaygurel.weatherapp.presentaion
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,23 +24,23 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kubilaygurel.weatherapp.R
-import com.kubilaygurel.weatherapp.presentaion.WeatherDataDisplay
-import com.kubilaygurel.weatherapp.presentaion.WeatherState
+import com.kubilaygurel.weatherapp.presentaion.ui.theme.CustomCardColorTwo
 import java.time.format.DateTimeFormatter
 import kotlin.math.roundToInt
 
 @Composable
 fun WeatherCard(
     state: WeatherState,
-    backgroundColor: Color,
-    modifier: Modifier = Modifier
+
 ) {
 
     state.weatherInfo?.currentWeatherData?.let { data ->
 
+
         Card(
-            shape = RoundedCornerShape(10.dp),
-            modifier = Modifier
+            shape = RoundedCornerShape(15.dp),
+            modifier = Modifier,
+            colors = CardDefaults.cardColors(CustomCardColorTwo.copy(alpha = 0.1f))
         ) {
             Column(
                 modifier = Modifier.fillMaxWidth()
@@ -52,52 +53,58 @@ fun WeatherCard(
                         )
                     }",
                     modifier = Modifier.align(Alignment.End),
-                    color = Color.Black
+                    color = Color.White
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
                 Image(
                     painter = painterResource(id = data.weatherType.iconRes),
                     contentDescription = null,
-                    modifier = Modifier.width(200.dp)
+                    modifier =
+                    Modifier.width(200.dp)
+                        .align(Alignment.CenterHorizontally)
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = "${data.temperatureCelsius}°C",
                     fontSize = 50.sp,
-                    color = Color.Black
+                    color = Color.White,
+                    modifier = Modifier.align(Alignment.CenterHorizontally)
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = data.weatherType.weatherDesc,
                     fontSize = 20.sp,
-                    color = Color.Black
+                    color = Color.White,
+                    modifier = Modifier.align(Alignment.CenterHorizontally)
                 )
-                Spacer(modifier = Modifier.height(32.dp))
+                Spacer(modifier = Modifier.height(16.dp))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceAround
+                    Arrangement.SpaceAround,
                 ) {
                     WeatherDataDisplay(
                         value = data.pressure.roundToInt(),
                         unit = "hpa",
                         icon = ImageVector.vectorResource(id = R.drawable.ic_pressure),
-                        iconTint = Color.Black,
-                        textStyle = TextStyle(color = Color.Black)
+                        iconTint = Color.White,
+                        textStyle = TextStyle(color = Color.White)
                     )
+                    Spacer(modifier = Modifier.width(45.dp))
                     WeatherDataDisplay(
                         value = data.humidity.roundToInt(),
                         unit = "%",
                         icon = ImageVector.vectorResource(id = R.drawable.ic_drop),
-                        iconTint = Color.Black,
-                        textStyle = TextStyle(color = Color.Black)
+                        iconTint = Color.White,
+                        textStyle = TextStyle(color = Color.White),
                     )
+                    Spacer(modifier = Modifier.width(45.dp))
                     WeatherDataDisplay(
                         value = data.windSpeed.roundToInt(),
                         unit = "km/h",
                         icon = ImageVector.vectorResource(id = R.drawable.ic_wind),
-                        iconTint = Color.Black,
-                        textStyle = TextStyle(color = Color.Black)
+                        iconTint = Color.White,
+                        textStyle = TextStyle(color = Color.White)
                     )
                 }
             }
