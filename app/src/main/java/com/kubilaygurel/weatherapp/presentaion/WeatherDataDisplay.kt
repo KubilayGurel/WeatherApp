@@ -31,7 +31,7 @@ Row (modifier = Modifier,
     Text(
         text = "$value$unit",
         style = textStyle,
-        color = Color.Black
+        color = Color.White
     )
 
 }
