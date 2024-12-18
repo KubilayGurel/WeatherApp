@@ -22,6 +22,17 @@ class WeatherViewModel @Inject constructor(
     var state by mutableStateOf(WeatherState())
         private set
 
+
+    fun updatePermissionDenied(isDenied: Boolean){
+        state = state.copy(
+            error = if (isDenied) "Location permissions are required to get weather data." else null,
+        )
+    }
+
+    fun clearError(){
+        state = state.copy(error = null)
+    }
+
     fun loadWeatherInfo() {
         viewModelScope.launch {
             state = state.copy(
