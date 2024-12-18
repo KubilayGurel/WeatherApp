@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
@@ -23,6 +25,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.kubilaygurel.weatherapp.presentaion.ui.WeatherForecast
 import com.kubilaygurel.weatherapp.presentaion.ui.theme.CustomBackGround
+import com.kubilaygurel.weatherapp.presentaion.ui.theme.CustomCardColor
 import com.kubilaygurel.weatherapp.presentaion.ui.theme.WeatherAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,8 +40,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         permissionLauncher = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
-        ){
-            viewModel.loadWeatherInfo()
+        ){ permissions ->
+            val allPermissionsGranted = permissions[Manifest.permission.ACCESS_FINE_LOCATION] == true &&
+                    permissions[Manifest.permission.ACCESS_COARSE_LOCATION] == true
+            if (allPermissionsGranted){
+                viewModel.loadWeatherInfo()
+            } else{
+                viewModel.updatePermissionDenied(true)
+            }
+
         }
         permissionLauncher.launch(arrayOf(
             Manifest.permission.ACCESS_FINE_LOCATION,
@@ -63,17 +73,33 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                     viewModel.state.error?.let { error ->
-                        Text(
-                            text = error,
-                            color = Color.White,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier.align(Alignment.Center)
-                        )
+                        Column (
+                            modifier = Modifier.align(Alignment.Center),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ){
+                            Text(
+                                text = error,
+                                color = Color.White,
+                                textAlign = TextAlign.Center,
+                            )
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Button(colors = ButtonDefaults.buttonColors(contentColor = Color.White,
+                                containerColor = CustomCardColor.copy(alpha = 0.5f),
+                            ),onClick = {
+                                viewModel.clearError()
+                                permissionLauncher.launch(
+                                    arrayOf(
+                                        Manifest.permission.ACCESS_FINE_LOCATION,
+                                        Manifest.permission.ACCESS_COARSE_LOCATION
+                                    )
+                                )
+                            }) {
+                                Text(text = "Grant Permissions", color = Color.White)
+                            }
+                        }
                     }
                 }
                 }
             }
         }
-
-
     }
