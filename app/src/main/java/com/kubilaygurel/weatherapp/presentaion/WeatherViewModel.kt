@@ -50,10 +50,11 @@ class WeatherViewModel @Inject constructor(
             } ?: kotlin.run {
                 state = state.copy(
                     isLoading = false,
-                    error = "Cant get location. Make sure to grant permission an enable GPS."
+                    error = "Unable to get location. Make sure location permissions are granted and GPS is turned on."
                 )
             }
         }
+
     }
 
 }
