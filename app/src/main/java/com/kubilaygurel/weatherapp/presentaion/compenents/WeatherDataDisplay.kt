@@ -1,4 +1,4 @@
-package com.kubilaygurel.weatherapp.presentaion
+package com.kubilaygurel.weatherapp.presentaion.compenents
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer

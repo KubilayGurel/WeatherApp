@@ -1,4 +1,4 @@
-package com.kubilaygurel.weatherapp.presentaion
+package com.kubilaygurel.weatherapp.presentaion.viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.kubilaygurel.weatherapp.domain.location.LocationTracker
 import com.kubilaygurel.weatherapp.domain.repository.WeatherRepository
 import com.kubilaygurel.weatherapp.domain.util.Resource
+import com.kubilaygurel.weatherapp.presentaion.WeatherState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

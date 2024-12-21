@@ -1,6 +1,5 @@
-package com.kubilaygurel.weatherapp.presentaion.ui
+package com.kubilaygurel.weatherapp.presentaion.compenents
 
-import HourlyWeatherDisplay
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

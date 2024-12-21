@@ -1,4 +1,4 @@
-package com.kubilaygurel.weatherapp.presentaion
+package com.kubilaygurel.weatherapp.presentaion.compenents
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -24,6 +24,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kubilaygurel.weatherapp.R
+import com.kubilaygurel.weatherapp.presentaion.WeatherState
 import com.kubilaygurel.weatherapp.presentaion.ui.theme.CustomCardColorTwo
 import java.time.format.DateTimeFormatter
 import kotlin.math.roundToInt
@@ -32,7 +33,7 @@ import kotlin.math.roundToInt
 fun WeatherCard(
     state: WeatherState,
 
-) {
+    ) {
 
     state.weatherInfo?.currentWeatherData?.let { data ->
 
