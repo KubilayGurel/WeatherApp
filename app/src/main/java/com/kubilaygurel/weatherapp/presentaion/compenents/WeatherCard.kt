@@ -24,7 +24,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kubilaygurel.weatherapp.R
-import com.kubilaygurel.weatherapp.presentaion.WeatherState
+import com.kubilaygurel.weatherapp.presentaion.state.WeatherState
 import com.kubilaygurel.weatherapp.presentaion.ui.theme.CustomCardColorTwo
 import java.time.format.DateTimeFormatter
 import kotlin.math.roundToInt

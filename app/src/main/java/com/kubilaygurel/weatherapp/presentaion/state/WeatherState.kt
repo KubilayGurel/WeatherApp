@@ -1,4 +1,4 @@
-package com.kubilaygurel.weatherapp.presentaion
+package com.kubilaygurel.weatherapp.presentaion.state
 
 import com.kubilaygurel.weatherapp.domain.weather.WeatherInfo
 
