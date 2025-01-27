@@ -45,10 +45,10 @@ Uygulamayı cihazınıza/emülatöre yükleyin ve çalıştırın!
 
 📷 Ekran Görüntüleri
 
-![Screenshot_20250127_112528](https://github.com/user-attachments/assets/1fc5005a-6b46-432f-8816-35891ef3a29c)
+<img src="https://github.com/user-attachments/assets/1fc5005a-6b46-432f-8816-35891ef3a29c" alt="Screenshot 1" width="300"/>
 
-![Screenshot_20250127_112748](https://github.com/user-attachments/assets/995a2931-121c-40b5-8fad-eeabd8b16b1b)
+<img src="https://github.com/user-attachments/assets/995a2931-121c-40b5-8fad-eeabd8b16b1b" alt="Screenshot 2" width="300"/>
 
-![Screenshot_20250127_112814](https://github.com/user-attachments/assets/e827260b-39ae-4937-9a1e-3c1294b71375)
+<img src="https://github.com/user-attachments/assets/e827260b-39ae-4937-9a1e-3c1294b71375" alt="Screenshot 3" width="300"/>
 
 
