@@ -1,46 +1,62 @@
-WeatherApp 🌤️
-WeatherApp, kullanıcıların mevcut konumlarına göre hava durumu bilgilerini anlık olarak görüntüleyebileceği modern bir Android uygulamasıdır. MVVM mimarisi ve Jetpack Compose ile geliştirilmiş olup, şık ve kullanıcı dostu bir deneyim sunar.
+🌤️ WeatherApp
 
-📌 Özellikler
-🌡️ Mevcut Hava Durumunu Çekme
-Kullanıcıların bulunduğu konumun hava durumu verilerini gerçek zamanlı olarak görüntülemesini sağlar.
+WeatherApp is a modern Android application that provides real-time weather information based on the user's current location. Built with MVVM architecture and Jetpack Compose, it offers a sleek, user-friendly, and high-performance experience.
 
-🎨 Modern Tasarım
-Jetpack Compose kullanılarak tasarlanmış, estetik ve kolay kullanımlı bir arayüz.
+🚀 Features
 
-🔐 Güvenli İzin Yönetimi
-Kullanıcıdan yalnızca gerekli olan konum izinlerini alır ve hata durumlarını kullanıcı dostu mesajlarla yönetir.
+✅ Real-Time Weather Data – Fetches and displays up-to-date weather information based on the user's current location.
 
-📂 Proje Yapısı
-Uygulama dört ana paketten oluşur:
+🎨 Modern UI – Designed with Jetpack Compose, ensuring a beautiful and intuitive user experience.
 
-data: API işlemleri ve veri modellerini içerir.
-di: Hilt bağımlılık enjeksiyonu yapılandırması.
-domain: Veri işleme ve iş kurallarını içerir.
-presentation: Kullanıcı arayüzü ve ekranların bulunduğu kısım.
-🛠️ Kullanılan Teknolojiler
-Kotlin
-Jetpack Compose
-Hilt (Dependency Injection)
-Coroutines & Flow
-Retrofit
+🔐 Secure Permission Handling – Requests only necessary location permissions and provides clear error messages.
 
-🚀 Çalıştırmak İçin
-Projeyi klonlayın:
+⚡ High Performance – Uses Coroutines & Flow for efficient and smooth data processing.
 
+📂 Project Structure
+The application follows a clean MVVM architecture and is structured into four main packages:
+
+kotlin
+Copy
+Regulation
+📂 data        // API operations, local storage, and data models  
+📂 di          // Hilt dependency injection configuration  
+📂 domain      // Business logic and data processing  
+📂 presentation // UI components and screens  
+
+
+
+🛠️ Technologies Used
+Kotlin – Primary programming language
+
+Jetpack Compose – Modern UI toolkit
+
+Hilt – Dependency Injection
+
+Coroutines & Flow – Asynchronous programming
+
+Retrofit – API communication
+
+
+
+🚀 Getting Started
+
+🔧 Prerequisites
+Android Studio (Latest Version)
+Minimum SDK 23+
+
+
+🏗 Installation
+1️⃣ Clone the repository:
 bash
-Kopyala
-Düzenle
-git clone https://github.com/kullaniciadi/WeatherApp.git
-Android Studio'da projeyi açın.
-Gerekli bağımlılıkları (Gradle) senkronize edin.
-Uygulamayı cihazınıza/emülatöre yükleyin ve çalıştırın!
-📷 Ekran Görüntüleri
+Copy
+Regulation
+git clone https://github.com/username/WeatherApp.git
 
-<img src="https://github.com/user-attachments/assets/1fc5005a-6b46-432f-8816-35891ef3a29c" alt="Screenshot 1" width="300"/>
+2️⃣ Open the project in Android Studio.
 
-<img src="https://github.com/user-attachments/assets/995a2931-121c-40b5-8fad-eeabd8b16b1b" alt="Screenshot 2" width="300"/>
+3️⃣ Sync dependencies (Gradle).
 
-<img src="https://github.com/user-attachments/assets/e827260b-39ae-4937-9a1e-3c1294b71375" alt="Screenshot 3" width="300"/>
+4️⃣ Run the app on your device/emulator.
 
-
+📷 Screenshots
+<p align="center"> <img src="https://github.com/user-attachments/assets/1fc5005a-6b46-432f-8816-35891ef3a29c" alt="Screenshot 1" width="250"/> <img src="https://github.com/user-attachments/assets/995a2931-121c-40b5-8fad-eeabd8b16b1b" alt="Screenshot 2" width="250"/> <img src="https://github.com/user-attachments/assets/e827260b-39ae-4937-9a1e-3c1294b71375" alt="Screenshot 3" width="250"/> </p>
