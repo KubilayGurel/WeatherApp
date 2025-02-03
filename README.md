@@ -15,9 +15,6 @@ WeatherApp is a modern Android application that provides real-time weather infor
 📂 Project Structure
 The application follows a clean MVVM architecture and is structured into four main packages:
 
-kotlin
-Copy
-Regulation
 📂 data        // API operations, local storage, and data models  
 📂 di          // Hilt dependency injection configuration  
 📂 domain      // Business logic and data processing  
